@@ -24,6 +24,12 @@
     <Compile Include="Exercise1.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="InheritancePractice.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PythonClassExample.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Session1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
