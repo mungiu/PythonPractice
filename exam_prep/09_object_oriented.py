@@ -1,21 +1,29 @@
 class MyRecipe:
-    """ Exercise 9.1 """
-
-    def __init__(self, calories, cook_time):
+    def __init__(self, calories, cookTime):
         self.calories = calories
-        self.cook_time = cook_time
+        self.cookTime = cookTime
 
     def cook(self):
-        print(f"Cook time is: {self.cook_time} minutes, and it will contain {self.calories} calories")
+        print(f"Your food has {self.calories} calories and cook time in minutes is: {self.cookTime}")
 
 
-recipeTest = MyRecipe(500, 1)
+rec1 = MyRecipe(100, 20)
+rec2 = MyRecipe(200, 30)
+rec3 = MyRecipe(300, 40)
+rec4 = MyRecipe(400, 50)
+rec5 = MyRecipe(500, 60)
+
+rec1.cook()
+rec2.cook()
+rec3.cook()
+rec4.cook()
+rec5.cook()
 
 
 class Contact:
     """ Exercise 9.2 """
 
-    def __init__(self, name, email):
+    def __init__(self, name: str, email: str):
         self.name = name
         self.email = email
 
@@ -26,7 +34,7 @@ class Contact:
 class AddressHolder:
     """ Exercise 9.2 """
 
-    def __init__(self, street, post_code, city):
+    def __init__(self, street: str, post_code: int, city: str):
         self.street = street
         self.post_code = post_code
         self.city = city
@@ -38,14 +46,22 @@ class AddressHolder:
 class Friend(Contact, AddressHolder):
     """ Exercise 9.2 """
 
-    def __init__(self, name, email, street, post_code, city, phone):
+    def __init__(self, phone: str, name: str, email: str, street: str, post_code: int, city: str):
         Contact.__init__(self, name, email)
         AddressHolder.__init__(self, street, post_code, city)
         self.phone = phone
 
+    def __str__(self):
+        return f"Phone: {self.phone} " \
+               f"Name : {self.name} " \
+               f"Email: {self.email} " \
+               f"Street: {self.street} " \
+               f"Post code: {str(self.post_code)} " \
+               f"City: {self.city}"
 
-testFriend = Friend("Valeria", "vm@vm.com", "TheStreet", "PO8000", "City")
-print(testFriend.__str__())
+
+friend = Friend("555555", "Andrei", "bro@gmail.com", "MyStreet", 23, "MyCity")
+print(friend)
 
 
 class Fish:
@@ -63,10 +79,9 @@ class Fish:
 class Shark(Fish):
     """ Exercise 9.3 """
 
-    def __init__(self, name, place_found):
+    def __init__(self, name: str, placeFound: str):
         self.name = name
-        self.place_found = place_found
-        Fish.__init__(self)
+        self.placeFound = placeFound
 
     def eat(self):
         print("The shark is eating...")
@@ -76,11 +91,10 @@ class Shark(Fish):
 
 
 class Dolphin(Fish):
-    """ Exercise 9.3 """
+    """ Exercise 9.4 """
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
-        Fish.__init__(self)
 
     def eat(self):
         print("The dolphin is eating...")

@@ -33,6 +33,7 @@ print(ViaStudent().where)  # prints "VIA-Horsens"
 
 class Vehicle(object):
     def __init__(self, number_of_tires):
+        # (__) at the beginning makes a variable or a method private
         self.__numberOfTires = number_of_tires
 
     @property
